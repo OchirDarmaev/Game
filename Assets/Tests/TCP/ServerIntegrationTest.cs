@@ -31,9 +31,9 @@ namespace Tests
             // Act
             Task.Run(async () =>
              {
-                 var client = new Client(IPAddress.Parse(IpString), Port, Debug.unityLogger);
-                 using (await client.ConnectAsync())
+                 using (var client = new Client(IPAddress.Parse(IpString), Port, Debug.unityLogger))
                  {
+                     await client.ConnectAsync();
                      await client.SendAsync(expMsg);
                  }
              }, ctsTimeout.Token)
@@ -67,14 +67,13 @@ namespace Tests
 
             Task.Run(async () =>
             {
-                var client = new Client(IPAddress.Parse(IpString), Port, Debug.unityLogger);
                 foreach (var msg in expMsgs)
-                {
-                    using (await client.ConnectAsync())
+                    using (var client = new Client(IPAddress.Parse(IpString), Port, Debug.unityLogger))
                     {
+                        await client.ConnectAsync();
                         await client.SendAsync(msg);
                     }
-                }
+
             }, ctsTimeout.Token)
                  .GetAwaiter()
                  .GetResult();

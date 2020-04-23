@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace ServerTCP
 {
-    public class Client
+    public class Client : IDisposable
     {
         private readonly IPAddress _ipAddress;
         private readonly int _port;
@@ -18,14 +18,18 @@ namespace ServerTCP
             _ipAddress = ipAddress;
             _port = port;
             _logger = logger;
+            _client = new TcpClient();
         }
 
-        public async Task<IDisposable> ConnectAsync()
+        public async Task ConnectAsync()
         {
-            _client = new TcpClient();
             await _client.ConnectAsync(_ipAddress, _port);
             _logger.Log("ConnectAsync");
-            return _client;
+        }
+
+        public void Dispose()
+        {
+            _client?.Dispose();
         }
 
         public async Task SendAsync(byte[] data)
@@ -34,6 +38,7 @@ namespace ServerTCP
             {
                 await stream.WriteAsync(data, 0, data.Length);
                 _logger.Log("SendAsync");
+                stream.Close();
             }
         }
     }

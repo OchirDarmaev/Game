@@ -10,28 +10,26 @@ namespace ControlPanel
 {
     public class ControlPanelGameInstaller : MonoInstaller
     {
-        public async override void InstallBindings()
+        public override void InstallBindings()
         {
-            var ip = IPAddress.Parse("127.0.0.1");
-            var port = 8080;
-            var lightIsOn = false;
             Container.Bind<Settings>().AsCached();
-            Container.Bind<Client>().ToSelf().AsCached().WithArguments(ip, port, Debug.unityLogger);
+            Container.Bind<Client>().ToSelf().AsCached();
 
             Container.Bind<DetonatorPresenter>().AsCached();
             Container.Bind<Detonator>().AsCached();
 
             Container.Bind<LightSwitchPresenter>().AsCached();
-            Container.Bind<LightSwitch>().AsCached().WithArguments(lightIsOn);
+            Container.Bind<LightSwitch>().AsCached().WithArguments(false);
 
             var detonator = Container.Resolve<Detonator>();
             var lightSwitch = Container.Resolve<LightSwitch>();
-            var client = Container.Resolve<Client>();
+            var settings = Container.Resolve<Settings>();
 
             var clientObs = Observer.Create<byte[]>(async data =>
             {
-                using (await client.ConnectAsync())
+                using (var client = new Client(settings.Address, settings.Port, Debug.unityLogger))
                 {
+                    await client.ConnectAsync();
                     await client.SendAsync(data);
                 }
             });

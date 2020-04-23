@@ -8,7 +8,7 @@ namespace Room
         public readonly ReactiveProperty<bool> IsTurnOn;
 
         [Inject]
-        public Lamp(MySettings settings)
+        public Lamp(Settings settings)
         {
             IsTurnOn = new ReactiveProperty<bool>(settings.LampIsOn);
         }

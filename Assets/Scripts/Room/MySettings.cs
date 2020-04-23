@@ -2,12 +2,12 @@
 
 namespace Room
 {
-    public class MySettings
+    public class Settings
     {
         public int Port { get; set; }
         public bool LampIsOn { get; set; }
 
-        public MySettings()
+        public Settings()
         {
             if (int.TryParse(Environment.GetEnvironmentVariable("port"), out var port))
             {
