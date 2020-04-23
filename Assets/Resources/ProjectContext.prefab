@@ -50,7 +50,7 @@ MonoBehaviour:
   _editorReflectionBakingCoverageMode: 0
   _buildsReflectionBakingCoverageMode: 0
   _settings:
-    _ensureDeterministicDestructionOrderOnApplicationQuit: 0
+    _ensureDeterministicDestructionOrderOnApplicationQuit: 1
     _displayWarningWhenResolvingDuringInstall: 1
     _validationRootResolveMethod: 0
     _validationErrorResponse: 0

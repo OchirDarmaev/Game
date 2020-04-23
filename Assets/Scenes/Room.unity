@@ -300,10 +300,36 @@ BoxCollider:
   m_GameObject: {fileID: 532063976}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.010491572, y: 0.032178108, z: 0.020000003}
-  m_Center: {x: 0.000005512731, y: 0.015998151, z: -0.0000000013969838}
+  m_Size: {x: 0, y: 0.03217811, z: 0.020000003}
+  m_Center: {x: 0.0052512954, y: 0.015998153, z: -0.000000001192093}
+--- !u!65 &532063981
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532063976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010491572, y: 0.000044410237, z: 0.020000003}
+  m_Center: {x: 0.0000055128335, y: 0.03206505, z: -0.0000000011920929}
+--- !u!65 &532063982
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532063976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010491572, y: 0.0000064862156, z: 0.020000003}
+  m_Center: {x: 0.0000055128335, y: -0.000087652974, z: -0.000000001192093}
 --- !u!1 &653944423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
@@ -14175,7 +14201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6b9654214f032438a1cce1e3fe835e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Magnitude: 182.32
+  Magnitude: 277
 --- !u!65 &1143287820
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14842,7 +14868,7 @@ ParticleSystem:
   cullingMode: 3
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
