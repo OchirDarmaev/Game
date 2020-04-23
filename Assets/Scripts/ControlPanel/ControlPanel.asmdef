@@ -1,0 +1,19 @@
+{
+    "name": "ControlPanel",
+    "references": [
+        "Zenject",
+        "UniRx",
+        "ServerTCP",
+        "Room"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

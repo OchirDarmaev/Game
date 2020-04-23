@@ -1,0 +1,16 @@
+{
+    "name": "Room",
+    "references": [
+        "UniRx",
+        "Zenject",
+        "ServerTCP"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}
